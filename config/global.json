@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Findx": {
+            "applicationId": "MVUNPXx6ekOT3oyMfyB5zivoaEIbSAc0POXRCUp7", 
+            "masterKey": "0QhLWQK0KkNRxDK54UZY87e2cJ6nlRdHivwV2qAZ"
+        }, 
+        "_default": {
+            "link": "Findx"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.1"
+    }
+}
