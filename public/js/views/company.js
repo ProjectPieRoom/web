@@ -1,12 +1,22 @@
-window.FindX.Views.Company = Parse.View.extend({
-    el: ".content",
-    
-    initialize: function() {
-      _.bindAll(this, "logIn", "signUp");
-      this.render();
-    },
-    render: function() {
-      this.$el.html(_.template($("#login-template").html()));
-      this.delegateEvents();
+//TODO: move to views/company/company.js
+
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  'parse',
+  'text!templates/company.html'
+], function($, _, Backbone, Parse, companyTemplate){
+  var CompanyView = Backbone.View.extend({
+    el: $('#app-view'),
+    render: function(){
+      // Using Underscore we can compile our template with data
+      var data = {};
+      var compiledTemplate = _.template( companyTemplate, data );
+      // Append our compiled template to this Views "el"
+      this.el.html( compiledTemplate );
     }
   });
+  // Our module now returns our view
+  return CompanyView;
+});

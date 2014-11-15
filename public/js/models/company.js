@@ -1,19 +1,14 @@
-window.FindX.Models.Company = Parse.Object.extend("Company", {
-  // Default attributes for the todo.
-  defaults: {
-    content: "empty todo...",
-    done: false
-  },
-
-  initialize: function() {
-    if (!this.get("content")) {
-      this.set({"content": this.defaults.content});
+// Filename: models/company
+define([
+  'underscore',
+  'backbone',
+  'parse'
+], function(_, Backbone, Parse){
+  var CompanyModel = Parse.Object.extend({
+    defaults: {
+      name: "FindX"
     }
-  },
-  save: function() {
-
-  },
-  custom: function() {
-    console.log();
-  }
+  });
+  // Return the model for the module
+  return CompanyModel;
 });
