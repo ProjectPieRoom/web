@@ -17,13 +17,17 @@ require.config({
     parse: {
       deps: ['jquery', 'underscore'],
       exports: 'Parse'
-    }
+    },
+    parallax: ['jquery']
   },
   paths: {
     jquery: 'lib/jquery',
     underscore: 'lib/underscore',
     backbone: 'lib/backbone',
-    parse: 'http://www.parsecdn.com/js/parse-1.3.1.min'
+    parse: 'lib/parse',
+    parallax: 'lib/parallax',
+    domReady: 'lib/domReady',
+    d3: 'lib/d3.min'
   }
 });
 
@@ -34,6 +38,6 @@ require(['parse'], function(Parse) {
 
 require([
   'app'
-], function(App){
+], function(App) {
   App.initialize();
 });

@@ -4,12 +4,23 @@ define([
   'underscore',
   'backbone',
   'router',
-  'parse'
-], function($, _, Backbone, AppRouter, Parse){
+  'parse',
+  'collections/company/companies_collection'
+], function($, _, Backbone, AppRouter, Parse, CompaniesCollection){
   var initialize = function(){
-    new AppRouter();
+    var companies = new CompaniesCollection();
+    companies.fetch({
+      success: function(collection) {
+        new AppRouter({
+          companies: collection
+        });
 
-    Parse.history.start();
+        Parse.history.start();
+      },
+      error: function(collection, error) {
+        console.log("error retrieving companies")
+      }
+    })
   }
 
   return {

@@ -3,20 +3,22 @@ define([
 	'underscore',
 	'backbone',
 	'parse',
-	'layoutmanager',
 	'text!templates/components/navbar_template.html'
-], function($, _, Backbone, Parse, Layout, navbarTemplate){
+], function($, _, Backbone, Parse, navbarTemplate){
+	var NavBarView = Parse.View.extend({
+		template: _.template( navbarTemplate ),
 
-	var NavBarView = Backbone.View.extend({
-		manage: true,
-		el: $('#navbar'),
-		initialize: function() {},
+		initialize: function(options) {
+			this.el = options.el
+		},
 
 		render: function(){
-			var data = {};
-			var compiledTemplate = _.template( navbarTemplate, data );
-			// $('#navbar').html (compiledTemplate);
-			$(this.el).html( compiledTemplate );
+			var data = {
+				// Add data later
+			};
+			this.template = this.template( data )
+			$(this.el).html( this.template );
+			return this
 		}
 	});
 	// Our module now returns our view

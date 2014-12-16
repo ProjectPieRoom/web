@@ -1,0 +1,21 @@
+.parallax-pane {
+	color: #FFFFFF;
+	width: 100%;
+}
+
+#parallax-pane-1 {
+	/*background: #8D2C51 url(http://www.smitwallpaper.com/wallpaper/original/digital-wallpaper-3_1.jpg) no-repeat top center;*/
+	background: #8D2C51;
+	height: 300;
+}
+
+#parallax-pane-2 {
+	background: #FFF url(/img/SanFran.jpg) no-repeat top center;
+	background-size: 100% 100%;
+	height: 400px;
+}
+
+#parallax-pane-3 {
+	background: #FE8C1C; 
+	height: 400px;
+}

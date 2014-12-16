@@ -1108,7 +1108,6 @@
         this.setElement(_.result(this, 'el'), false);
       }
     }
-
   });
 
   // Backbone.sync

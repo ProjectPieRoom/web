@@ -4,23 +4,27 @@ define([
   'backbone',
   'parse',
   'text!templates/home/home_template.html',
-  '../components/navbar_view'
-], function($, _, Backbone, Parse, homeTemplate, NavBarView){
-  var HomeView = Backbone.View.extend({
-    el: '#app-view',
+  'text!templates/home/home_css.html',
+  '../components/navbar_view',
+  './favoriteCompanies_view'
+], function($, _, Backbone, Parse, homeTemplate, homeCSS, NavBarView, FavoriteCompaniesView){
+  var HomeView = Parse.View.extend({
+    el: $('#app-view'),
+    template: _.template( homeTemplate ),
+    cssTemplate: _.template( homeCSS ),
 
     initialize: function() {
-      this.navbar = new NavBarView();
+      this.navbar = new NavBarView({el: '#navbarDiv'});
+      this.favCoView = new FavoriteCompaniesView({el: '#favoriteCompaniesDiv'});
     },
 
-    render: function(){
+    render: function() {
       var data = {};
-      var compiledTemplate = _.template( homeTemplate, data );
-      $(this.$el).html( compiledTemplate );
-      $(this.$el).append( $(this.navbar.$el) );
+      this.template = this.template( data );
+      this.$el.html( this.template );
       this.navbar.render();
+      this.favCoView.render();
     }
   });
-  // Our module now returns our view
   return HomeView;
 });
