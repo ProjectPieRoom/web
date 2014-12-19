@@ -41,7 +41,7 @@ define([
 
     search: function() {
       var companyIndexView = new CompanyIndexView({
-        collection: this.companies,
+        companies: this.companies,
       });
       companyIndexView.render();
     },

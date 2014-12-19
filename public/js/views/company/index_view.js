@@ -4,14 +4,19 @@ define([
   'backbone',
   'parse',
   'text!templates/company/index_template.html',
-  'views/company/company'
-], function($, _, Backbone, Parse, IndexTemplate, CompanyView){
+  'text!templates/company/index_css.html',
+  'views/company/company',
+  '../components/navbar_view',
+], function($, _, Backbone, Parse, IndexTemplate, indexCSS, CompanyView, NavBarView){
   var CompanyIndexView = Parse.View.extend({
     el: $('#app-view'),
     template: _.template( IndexTemplate ),
+    cssTemplate: _.template( indexCSS ),
 
     initialize: function(options) {
-      this.listenTo(this.collection, 'add', this.addOne );
+      this.collection = options.companies;
+      this.collection.bind('add', this.addOne);
+      this.navbar = new NavBarView({el: '#navbarDiv'});
     },
 
     addAll: function() {
@@ -22,12 +27,13 @@ define([
       var view = new CompanyView({
         model: company
       });
-      this.$el.append( view.render().$el );
+      this.$('#content_box').append( view.render().$el );
     },
 
     render: function(){
       this.$el.html( this.template );
       this.addAll();
+      this.navbar.render();
       return this;
     }
   });
