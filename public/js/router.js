@@ -10,9 +10,10 @@ define([
   'views/company/index_view',
   'views/admin/admin',
   'views/user/new_user_view',
+  'views/user/login_view',
 ], function($, _, Backbone, Parse, AppState,
   HomeView, LoggedOutView, CompanyIndexView, AdminView,
-  NewUserView) {
+  NewUserView, LoginView) {
   'use strict';
 
   var state = AppState.getInstance();
@@ -26,6 +27,7 @@ define([
 
       //User
       'join': 'new_user',
+      'login': 'login',
 
       //Misc
       'admin': 'admin',
@@ -50,6 +52,11 @@ define([
     new_user: function() {
       var newUserView = new NewUserView({});
       newUserView.render();
+    },
+
+    login: function() {
+      var loginView = new LoginView({});
+      loginView.render();
     },
 
     admin: function() {

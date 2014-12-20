@@ -1,4 +1,4 @@
-#new_user {
+#login_div {
 	text-align: center;
 }
 
@@ -7,17 +7,13 @@
 	color: #8D2C51;
 }
 
-#new_user #new_user_form_container {
+#login_div #login_form_container {
 	width: 50%;
 	margin: 0 auto;
 	text-align: left;
 	color: #8D2C51;
 }
 
-#new_user #new_user_form_submit_btn {
+#login_div #login_form_submit_btn {
 	width: 100%;
-}
-
-#new_user #duplicate_email_text {
-	display: block;
 }
