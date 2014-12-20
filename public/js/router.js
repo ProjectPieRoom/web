@@ -8,24 +8,55 @@ define([
   'views/home/home_view',
   'views/loggedout/loggedout_view',
   'views/company/index_view',
-  'views/admin/admin'
-], function($, _, Backbone, Parse, AppState, HomeView, LoggedOutView, CompanyIndexView, AdminView){
+  'views/admin/admin',
+  'views/user/new_user_view',
+], function($, _, Backbone, Parse, AppState,
+  HomeView, LoggedOutView, CompanyIndexView, AdminView,
+  NewUserView) {
   'use strict';
 
   var state = AppState.getInstance();
 
   var AppRouter = Parse.Router.extend({
     routes: {
-      // Define some URL routes
+      
+      //Companies
       'search/.*': 'search',
-      'x': 'loggedOut',
+      
+
+      //User
+      'join': 'new_user',
+
+      //Misc
       'admin': 'admin',
+
+      //Site Pages
+      'x': 'loggedOut',
       '.*': 'index',
       '*actions': 'index'
     },
 
     initialize: function(options){
       this.companies = options.companies;
+    },
+
+    search: function() {
+      var companyIndexView = new CompanyIndexView({
+        companies: this.companies,
+      });
+      companyIndexView.render();
+    },
+
+    new_user: function() {
+      var newUserView = new NewUserView({});
+      newUserView.render();
+    },
+
+    admin: function() {
+      var adminView = new AdminView({
+        companies: this.companies
+      });
+      adminView.render();
     },
 
     //merge into index
@@ -39,19 +70,8 @@ define([
       homeView.render();
     },
 
-    search: function() {
-      var companyIndexView = new CompanyIndexView({
-        companies: this.companies,
-      });
-      companyIndexView.render();
-    },
-
-    admin: function() {
-      var adminView = new AdminView({
-        companies: this.companies
-      });
-      adminView.render();
-    }
+    
+    
   });
 
   return AppRouter;

@@ -1,0 +1,23 @@
+#new_user {
+	text-align: center;
+}
+
+#page_title {
+	font-size: 40px;
+	color: #8D2C51;
+}
+
+#new_user .form-control {
+	/*width: 50%;*/
+}
+
+#new_user #new_user_form_container {
+	width: 50%;
+	margin: 0 auto;
+	text-align: left;
+	color: #8D2C51;
+}
+
+#new_user #new_user_form_submit_btn {
+	width: 100%;
+}

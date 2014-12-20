@@ -4,14 +4,14 @@ define([
   'backbone',
   'parse',
   'text!templates/home/home_template.html',
-  'text!templates/layout/layout_css.html',
+  'text!templates/home/home_css.html',
   '../components/navbar_view',
   './favoriteCompanies_view'
-], function($, _, Backbone, Parse, homeTemplate, layoutCSS, NavBarView, FavoriteCompaniesView){
+], function($, _, Backbone, Parse, homeTemplate, homeCSS, NavBarView, FavoriteCompaniesView){
   var HomeView = Parse.View.extend({
     el: $('#app-view'),
     template: _.template( homeTemplate ),
-    cssTemplate: _.template( layoutCSS ),
+    cssTemplate: _.template( homeCSS ),
 
     initialize: function() {
       this.navbar = new NavBarView({el: '#navbarDiv'});
