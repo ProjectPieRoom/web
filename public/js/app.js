@@ -14,7 +14,6 @@ define([
         new AppRouter({
           companies: collection
         });
-
         Parse.history.start();
       },
       error: function(collection, error) {

@@ -24,21 +24,20 @@ define([
     },
 
     runScripts: function(){
-      favCoD3();
+      this.favCoD3();
     },
 
     favCoD3: function(){
       /** D3 for the Favorite Companies Div
         * Description: River of company logos.
         */
+      var elemWidth = 80,
+        elemHeight = 40,
+        spacing = 5;
 
       var container = $("#favoriteCompaniesDiv"),
-          width = container.width(),
-          height = 500;
-
-      var elemWidth = 50,
-          elemHeight = 20,
-          spacing = 5;
+          width = container.innerWidth(),
+          height = 2*elemHeight + spacing;
 
       var svg = d3.select("#favoriteCompaniesDiv").append("svg")
           .attr("width", width)
@@ -51,7 +50,7 @@ define([
 
       var data = [];
       for (var i=0; i<3; i++){
-        data.push("img/logo.png")
+        data.push("img/logo.png");
       }
 
       var images = elemGroup.selectAll("image")
@@ -64,6 +63,29 @@ define([
               .attr("y", elemHeight)
               .attr("width", elemWidth)
               .attr("height", elemHeight);
+
+      d3.timer(function(){
+        logos = d3.selectAll("#favoriteCompaniesDiv image");
+        var dx = -1;
+        logos.each(function(d,i){
+          var prevTransform = $(this).attr("transform");
+          if (prevTransform != null) { 
+            prevTransform = prevTransform.match(/-?\d\.?\d*/g,'');
+          }
+          if (prevTransform == null) {
+            prevTransform = 0;
+          } else {
+            prevTransform = parseFloat(prevTransform[0])  ;
+          }
+          var x = parseInt($(this).attr("x"));
+          if (x + prevTransform < 0) {
+            console.log(x);
+            $(this).attr("transform", function(d){return "translate(" + (width - x) + ")";});
+          } else {
+            $(this).attr("transform", function(d){return "translate(" + (prevTransform + dx) + ")";});
+          }
+        });
+      });
     }
   });
   // Our module now returns our view

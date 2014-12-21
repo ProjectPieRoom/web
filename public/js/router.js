@@ -23,7 +23,6 @@ define([
       
       //Companies
       'search/.*': 'search',
-      
 
       //User
       'join': 'new_user',
@@ -76,9 +75,6 @@ define([
       var homeView = new HomeView();
       homeView.render();
     },
-
-    
-    
   });
 
   return AppRouter;

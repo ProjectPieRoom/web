@@ -1,4 +1,4 @@
-// Filename: main.js
+  // Filename: main.js
 
 // Require.js allows us to configure shortcut alias
 // There usage will become more apparent further along in the tutorial.
@@ -27,7 +27,8 @@ require.config({
     parse: 'lib/parse',
     parallax: 'lib/parallax',
     domReady: 'lib/domReady',
-    d3: 'lib/d3.min'
+    d3: 'lib/d3.min',
+    css: 'lib/css'
   }
 });
 

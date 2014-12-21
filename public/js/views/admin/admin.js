@@ -36,7 +36,6 @@ define([
         })
         companyView.render();
       });
-
     }
   });
   return AdminView;

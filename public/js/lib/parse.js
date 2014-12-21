@@ -6865,7 +6865,6 @@
     this._configure(options || {});
     this._ensureElement();
     this.initialize.apply(this, arguments);
-    this.addCSS();
     this.delegateEvents();
   };
 
@@ -7037,16 +7036,6 @@
         this.setElement(this.el, false);
       }
     },
-
-    // CUSTOM-METHODS
-    // ------------------------------------------
-    // Adds the CSS-links to the DOM if it exists
-
-    addCSS: function() {
-      if (typeof this.cssTemplate === 'undefined') return;
-      this.cssTemplate = this.cssTemplate( {} );
-      $("head").append( this.cssTemplate );
-    }
   });
 
   /**
