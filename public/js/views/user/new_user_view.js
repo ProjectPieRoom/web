@@ -4,13 +4,13 @@ define([
   'backbone',
   'parse',
   'text!templates/user/new_user_template.html',
-  'text!templates/user/new_user_css.html',
   '../components/navbar_view',
-], function($, _, Backbone, Parse, NewUserTemplate, NewUserCSS, NavBarView){
+  'css!/css/components/navbar/navbar.css',
+  'css!/css/user/new_user.css',
+], function($, _, Backbone, Parse, NewUserTemplate, NavBarView){
   var newUserView = Parse.View.extend({
     el: $('#app-view'),
     template: _.template( NewUserTemplate ),
-    cssTemplate: _.template( NewUserCSS ),
 
     events: {
       'submit': 'onFormSubmit'

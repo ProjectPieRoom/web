@@ -4,14 +4,14 @@ define([
   'backbone',
   'parse',
   'text!templates/company/index_template.html',
-  'text!templates/company/index_css.html',
   'views/company/company',
   '../components/navbar_view',
-], function($, _, Backbone, Parse, IndexTemplate, indexCSS, CompanyView, NavBarView){
+  'css!/css/company/index.css',
+  'css!/css/company/company.css',
+], function($, _, Backbone, Parse, IndexTemplate, CompanyView, NavBarView){
   var CompanyIndexView = Parse.View.extend({
     el: $('#app-view'),
     template: _.template( IndexTemplate ),
-    cssTemplate: _.template( indexCSS ),
 
     initialize: function(options) {
       this.collection = options.companies;

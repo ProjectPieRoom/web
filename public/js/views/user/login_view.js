@@ -4,13 +4,13 @@ define([
   'backbone',
   'parse',
   'text!templates/user/login_template.html',
-  'text!templates/user/login_css.html',
   '../components/navbar_view',
-], function($, _, Backbone, Parse, LoginTemplate, LoginCSS, NavBarView){
+  'css!/css/components/navbar/navbar.css',
+  'css!/css/user/login.css',
+], function($, _, Backbone, Parse, LoginTemplate, NavBarView){
   var loginView = Parse.View.extend({
     el: $('#app-view'),
     template: _.template( LoginTemplate ),
-    cssTemplate: _.template( LoginCSS ),
 
     events: {
       'submit': 'onFormSubmit'

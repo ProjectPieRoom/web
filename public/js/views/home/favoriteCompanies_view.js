@@ -79,7 +79,6 @@ define([
           }
           var x = parseInt($(this).attr("x"));
           if (x + prevTransform < 0) {
-            console.log(x);
             $(this).attr("transform", function(d){return "translate(" + (width - x) + ")";});
           } else {
             $(this).attr("transform", function(d){return "translate(" + (prevTransform + dx) + ")";});

@@ -6,8 +6,8 @@ define([
   'text!templates/home/home_template.html',
   '../components/navbar_view',
   './favoriteCompanies_view',
-  'css!../../../css/components/navbar/navbar.css',
-  'css!../../../css/home/home.css',
+  'css!/css/components/navbar/navbar.css',
+  'css!/css/home/home.css',
 ], function($, _, Backbone, Parse, homeTemplate, NavBarView, FavoriteCompaniesView){
   var HomeView = Parse.View.extend({
     el: $('#app-view'),
