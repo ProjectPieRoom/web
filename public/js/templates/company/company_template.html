@@ -1,5 +1,6 @@
-<span class="company_name"><%= company.CompanyName %></span>
- (<%= company.NumEmployees %> employees)
+<img class="company_logo" src="<%= company.LogoPath %>" /> <span class="company_name"><%= company.CompanyName %></span>
+	<br />
+	<span class="company_slogan"><%= company.Slogan %></span>
 <hr style="width: 90%; color: grey">
 <span class="description">
 	<%= shortenedDescription %>
