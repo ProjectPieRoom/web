@@ -11,7 +11,16 @@ define([
     el: $('#app-view'),
     template: _.template( loggedOutTemplate ),
 
+    events: {
+      'click #sign_up_btn': 'redirectWithEmail'
+    },
+
     initialize: function() {
+    },
+
+    redirectWithEmail: function(e) {
+      var email = this.$('#email_input').val();
+      this.$('#sign_up_btn').attr('href', '/#/join/' + email);
     },
 
     render: function(){

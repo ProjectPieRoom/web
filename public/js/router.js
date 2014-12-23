@@ -25,7 +25,7 @@ define([
       'search/.*': 'search',
 
       //User
-      'join': 'new_user',
+      'join/:email': 'new_user',
       'login': 'login',
 
       //Misc
@@ -48,8 +48,10 @@ define([
       companyIndexView.render();
     },
 
-    new_user: function() {
-      var newUserView = new NewUserView({});
+    new_user: function(email) {
+      var newUserView = new NewUserView({
+        email: email
+      });
       newUserView.render();
     },
 

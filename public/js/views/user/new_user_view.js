@@ -16,8 +16,9 @@ define([
       'submit': 'onFormSubmit'
     },
 
-    initialize: function() {
+    initialize: function(options) {
       this.navbar = new NavBarView({el: '#navbarDiv'});
+      this.email = options.email;
     },
 
     onFormSubmit: function(e) {
@@ -84,6 +85,7 @@ define([
       var data = {};
       this.template = this.template( data );
       this.$el.html( this.template );
+      if( this.email ) this.$('#email_address_input').val(this.email);
       this.formFieldReset();
       this.navbar.render();
     }
