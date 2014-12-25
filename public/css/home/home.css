@@ -14,7 +14,7 @@
 	border-radius: 10px;
 }
 
-#app-view {
+#app-view #background {
 	background-image: url(/img/SF_back.jpg);
 	background-size: cover;
 	overflow: hidden;

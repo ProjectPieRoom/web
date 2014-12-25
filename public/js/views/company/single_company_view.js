@@ -3,11 +3,12 @@ define([
   'underscore',
   'backbone',
   'parse',
+  'blurjs',
   'text!templates/company/single_company_template.html',
   '../components/navbar_view',
   'css!/css/components/navbar/navbar.css',
   'css!/css/company/single_company.css',
-], function($, _, Backbone, Parse, SingleCompanyTemplate, NavBarView){
+], function($, _, Backbone, Parse, blurjs, SingleCompanyTemplate, NavBarView){
   var singleCompanyView = Parse.View.extend({
     el: $('#app-view'),
     template: _.template( SingleCompanyTemplate ),
@@ -24,6 +25,14 @@ define([
       this.template = this.template( data );
       this.$el.html( this.template );
       this.navbar.render();
+      this.$('#overview_content').blurjs({
+        source: '#overview_panel',
+        overlay: 'rgba(0,0,0,0.4)',
+        offset: {
+          x: 100,
+          y: 0
+        }
+      });
     }
   });
   return singleCompanyView;

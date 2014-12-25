@@ -18,7 +18,7 @@ require.config({
       deps: ['jquery', 'underscore'],
       exports: 'Parse'
     },
-    parallax: ['jquery']
+    parallax: ['jquery'],
   },
   paths: {
     jquery: 'lib/jquery',
@@ -28,7 +28,8 @@ require.config({
     parallax: 'lib/parallax',
     domReady: 'lib/domReady',
     d3: 'lib/d3.min',
-    css: 'lib/css'
+    css: 'lib/css',
+    blurjs: 'lib/blurjs.min',
   }
 });
 
