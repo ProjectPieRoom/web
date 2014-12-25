@@ -5,15 +5,19 @@ define([
   'backbone',
   'parse',
   'models/AppState',
-  'views/home/home_view',
-  'views/loggedout/loggedout_view',
   'views/company/index_view',
-  'views/admin/admin',
+  'views/company/single_company_view',
   'views/user/new_user_view',
   'views/user/login_view',
+  'views/admin/admin',
+  'views/loggedout/loggedout_view',
+  'views/home/home_view',
 ], function($, _, Backbone, Parse, AppState,
-  HomeView, LoggedOutView, CompanyIndexView, AdminView,
-  NewUserView, LoginView) {
+  CompanyIndexView, SingleCompanyView,
+  NewUserView, LoginView,
+  AdminView,
+  LoggedOutView, HomeView
+  ) {
   'use strict';
 
   var state = AppState.getInstance();
@@ -23,6 +27,7 @@ define([
       
       //Companies
       'search/.*': 'search',
+      'company/:name': 'company',
 
       //User
       'join/:email': 'new_user',
@@ -46,6 +51,17 @@ define([
         companies: this.companies,
       });
       companyIndexView.render();
+    },
+
+    company: function(query) {
+      var company;
+      this.companies.each(function(c) {
+        if(c.get("CompanyName") == query) company = c;
+      })
+      var singleCompanyView = new SingleCompanyView({
+        company: company,
+      });
+      singleCompanyView.render();
     },
 
     new_user: function(email) {
