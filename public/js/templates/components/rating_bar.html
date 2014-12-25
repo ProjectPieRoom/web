@@ -1,0 +1,17 @@
+<div class="rating_bar">
+	 
+	<div class="rating_bar_bar" style="background-color: <%= color %>; width: <%= width %>">
+		<table class="rating_bar_divider_container">
+			<tr>
+				<% for(var i = 0; i < ticks; i++) { %>
+					<% if (i != 0) { %>
+						<td class="rating_bar_divider"></td>
+					<% } else { %>
+						<td></td>
+					<% } %>
+				<% } %>
+			</tr>
+		</table>
+	</div>
+	<span class="value_text"><%= value %></span>
+</div>

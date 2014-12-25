@@ -35,13 +35,13 @@
 
 #about_panel {
 	background-color: #f9f9fa;
-	padding: 20px;
+	padding: 20px 35px 20px 35px;
 	margin: 0 auto;
 }
 
 .about_section {
 	display: table-cell;
-	width: 30%;
+	width: 33%;
 	float: left;
 	color: rgb(68, 68, 68);
 	padding: 10px 40px;
@@ -74,7 +74,7 @@
 	font-size: 15px;
 	color: #444;
 	float: right;
-	width: 65%;
+	width: 60%;
 	text-align: right;
 }
 
