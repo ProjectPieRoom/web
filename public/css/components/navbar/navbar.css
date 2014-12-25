@@ -6,3 +6,7 @@
 #navbarDiv a{
 	color: white;
 }
+
+.navbar {
+	border: 0px solid transparent;
+}

@@ -4,7 +4,10 @@ define([
   'backbone',
   'parse',
   'd3',
-  'text!templates/home/favoriteCompanies_template.html'
+  'text!templates/home/favoriteCompanies_template.html',
+
+  //CSS
+  'css!/css/home/favoriteCompanies.css',
 ], function($, _, Backbone, Parse, d3, FavCoTemplate){
   var FavoriteCompaniesView = Parse.View.extend({
     template: _.template( FavCoTemplate ),
@@ -36,7 +39,7 @@ define([
         spacing = 5;
 
       var container = $("#favoriteCompaniesDiv"),
-          width = container.innerWidth(),
+          width = container.width(),
           height = 2*elemHeight + spacing;
 
       var svg = d3.select("#favoriteCompaniesDiv").append("svg")

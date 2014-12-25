@@ -6,6 +6,9 @@ define([
   'd3',
   'text!templates/home/popularCompanies_template.html',
   'views/company/company',
+
+  //CSS
+  'css!/css/home/popularCompanies.css',
 ], function($, _, Backbone, Parse, d3, PopCoTemplate, CompanyView){
   var PopularCompaniesView = Parse.View.extend({
     template: _.template( PopCoTemplate ),
