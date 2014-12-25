@@ -52,8 +52,8 @@ define([
       // function(d,i) = function(data, index)
 
       var data = [];
-      for (var i=0; i<14; i++){
-        data.push("img/logo_sized.png");
+      for (var i=1; i<=14; i++){
+        data.push("img/company_logos/logo"+i+".png");
       }
 
       var images = elemGroup.selectAll("image")
