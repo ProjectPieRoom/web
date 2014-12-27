@@ -4,7 +4,7 @@ define([
   'backbone',
   'parse',
   'text!templates/company/index_template.html',
-  'views/company/company',
+  'views/company/company_view',
   '../components/navbar_view',
   'css!/css/company/index.css',
   'css!/css/company/company.css',

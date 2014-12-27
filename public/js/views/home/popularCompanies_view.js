@@ -5,7 +5,7 @@ define([
   'parse',
   'd3',
   'text!templates/home/popularCompanies_template.html',
-  'views/company/company',
+  'views/company/company_view',
 
   //CSS
   'css!/css/home/popularCompanies.css',
@@ -25,9 +25,10 @@ define([
 
     addOne: function(company) {
       var view = new CompanyView({
-        model: company
+        model: company,
+        parentElem: this.el
       });
-      $(this.el).append( view.render().$el );
+      view.render();
     },
 
     render: function(){

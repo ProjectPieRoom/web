@@ -1,18 +1,25 @@
 define([
+  //Libraries
   'jquery',
   'underscore',
   'backbone',
   'parse',
+
+  //Templates
   'text!templates/home/home_template.html',
+  
+  //Views
   '../components/navbar_view',
   './favoriteCompanies_view',
   './popularCompanies_view',
+
+  //Collections
   'collections/company/companies_collection',
 
   //CSS
   'css!/css/components/navbar/navbar.css',
   'css!/css/home/home.css',
-], function($, _, Backbone, Parse, HomeTemplate, NavBarView, FavoriteCompaniesView, PopularCompaniesView, CompaniesCollection){
+], function($, _, Backbone, Parse, HomeTemplate, NavBarView, FavoriteCompaniesView, PopularCompaniesView, CompaniesCollection, UserUtils){
   var HomeView = Parse.View.extend({
     el: $('#app-view'),
     template: _.template( HomeTemplate ),

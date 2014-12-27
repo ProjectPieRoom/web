@@ -36,3 +36,13 @@
 	color: grey;
 	font-size: 12px;
 }
+
+.icon {
+	margin-top: 2px;
+	padding: 5px 5px 5px 5px;
+	height: 45px;
+	width: 45px;
+	max-height: 45px;
+	max-width: 45px;
+	cursor: pointer;
+}
