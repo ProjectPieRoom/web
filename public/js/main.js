@@ -28,7 +28,7 @@ require.config({
     parallax: 'lib/parallax',
     domReady: 'lib/domReady',
     d3: 'lib/d3.min',
-    css: 'lib/css',
+    css: 'lib/require-css/css',
     blurjs: 'lib/blurjs.min',
   }
 });
