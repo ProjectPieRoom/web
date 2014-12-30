@@ -6,7 +6,7 @@ define([
   'text!templates/company/company_template.html',
 
   //Utils
-  'utils/user_utils'
+  'utils/user_utils',
 ], function($, _, Backbone, Parse, CompanyTemplate, UserUtils){
   var CompanyView = Parse.View.extend({
     className: 'company_tile',
@@ -54,7 +54,15 @@ define([
         $(this).on("click", select_heart);
         UserUtils.unlike(companyID);
       }
-    }
+    },
+
+    favorite: function() {
+      var heart = this.$el.find(".heart.unselected");
+      heart.attr("src", "img/icons/heart_selected.png");
+      heart.removeClass("unselected").addClass("selected");
+      heart.off();
+      this.bindActions();
+    },
 
   });
   return CompanyView;

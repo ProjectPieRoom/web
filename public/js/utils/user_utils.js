@@ -9,31 +9,12 @@ define([
     // Assign public functions to class
      this.like = like;
      this.unlike = unlike;
+     this.getFavorites = getFavorites;
 
     // Functions
     function like(companyID){
       var user = Parse.User.current();
-        
-      // Hack in place to test out favoriting companies
-      if (!user) {
-        
-        var userQuery = new Parse.Query(Parse.User);
-        userQuery.get("EegPQLi98M", {
-          success: function(userObj) {
-            user = userObj;
-            var Company = Parse.Object.extend("Company"); 
-            var companyQuery = new Parse.Query(Company);
-            companyQuery.get(companyID, {
-              success: function(companyObj) {
-                var relation = user.relation("Favorites");
-                relation.add(companyObj);
-                user.save();
-              },
-            });
-          },
-        });
-      } 
-      else {
+      if (user){
         var Company = Parse.Object.extend("Company"); 
         var companyQuery = new Parse.Query(Company);
         companyQuery.get(companyID, {
@@ -47,28 +28,8 @@ define([
     }
 
     function unlike(companyID){
-      var user = Parse.User.current();
-        
-      // Hack in place to test out favoriting companies
-      if (!user) {
-        
-        var userQuery = new Parse.Query(Parse.User);
-        userQuery.get("EegPQLi98M", {
-          success: function(userObj) {
-            user = userObj;
-            var Company = Parse.Object.extend("Company"); 
-            var companyQuery = new Parse.Query(Company);
-            companyQuery.get(companyID, {
-              success: function(companyObj) {
-                var relation = user.relation("Favorites");
-                relation.remove(companyObj);
-                user.save();
-              },
-            });
-          },
-        });
-      } 
-      else {
+      var user = Parse.User.current();   
+      if (user) {
         var Company = Parse.Object.extend("Company"); 
         var companyQuery = new Parse.Query(Company);
         companyQuery.get(companyID, {
@@ -79,7 +40,19 @@ define([
           },
         });
       }
-     }
+    }
+
+    function getFavorites(parent_view) {
+      var user = Parse.User.current();
+      if (user) {
+        var relation = user.relation("Favorites");
+        relation.query().find({
+          success: function (list) {
+            parent_view.displayFavorites(list);
+          },
+        });
+      }
+    }
   }
   return new UserUtils();
 });
