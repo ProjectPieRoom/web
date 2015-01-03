@@ -27,7 +27,7 @@ define([
       }
     }
 
-    function unlike(companyID){
+    function unlike(companyID) {
       var user = Parse.User.current();   
       if (user) {
         var Company = Parse.Object.extend("Company"); 

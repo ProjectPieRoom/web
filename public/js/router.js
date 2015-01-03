@@ -12,12 +12,13 @@ define([
   'views/admin/admin',
   'views/loggedout/loggedout_view',
   'views/home/home_view',
+  'views/user/profile_view',
 ], function($, _, Backbone, Parse, AppState,
   NavBarView,
   CompanyIndexView, SingleCompanyView,
   NewUserView, LoginView,
   AdminView,
-  LoggedOutView, HomeView
+  LoggedOutView, HomeView, ProfileView
   ) {
   'use strict';
 
@@ -34,6 +35,7 @@ define([
       'join/:email': 'new_user',
       'join/': 'new_user',
       'login': 'login',
+      'profile': 'profile',
 
       //Misc
       'admin': 'admin',
@@ -89,6 +91,11 @@ define([
       });
       adminView.render();
       this.navbar_view.render();
+    },
+
+    profile: function() {
+      var profileView = new ProfileView({});
+      profileView.render();
     },
 
     //merge into index

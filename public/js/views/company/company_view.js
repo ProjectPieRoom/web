@@ -30,7 +30,8 @@ define([
 
     //short str to n chars
     truncateDescription: function(str, n) {
-      return str.substr(0,n-1);
+      if (str.length <= n) return str;
+      return str.substr(0,n-4)+"...";
     },
 
     // Bind actions to icons
