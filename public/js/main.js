@@ -14,6 +14,11 @@ require.config({
       ],
       exports: 'Backbone'
     },
+    bootstrap: {
+      deps: [
+        'jquery'
+      ]
+    },
     parse: {
       deps: ['jquery', 'underscore'],
       exports: 'Parse'
@@ -27,6 +32,7 @@ require.config({
     jquery: 'lib/jquery',
     underscore: 'lib/underscore',
     backbone: 'lib/backbone',
+    bootstrap: 'lib/bootstrap',
     parse: 'lib/parse',
     parallax: 'lib/parallax',
     facebook: '//connect.facebook.net/en_US/all',
@@ -51,8 +57,12 @@ require(['parse', 'facebook', 'app'], function(Parse, FB, App) {
   });
 
   FB.getLoginStatus(function(response) {
-    console.log(response);
+    //console.log(response);
   });
 
   App.initialize();
+});
+
+require(['bootstrap'], function() {
+  //necessary from dropdown in navbar
 });

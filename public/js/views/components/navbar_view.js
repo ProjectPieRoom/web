@@ -6,18 +6,30 @@ define([
 	'text!templates/components/navbar_template.html'
 ], function($, _, Backbone, Parse, navbarTemplate){
 	var NavBarView = Parse.View.extend({
-		template: _.template( navbarTemplate ),
+		el: $('#navbarDiv'),
+
+		events: {
+			'click #logout_link': 'logout'
+		},
 
 		initialize: function(options) {
-			this.el = options.el
+		},
+
+		logout: function() {
+			Parse.User.logOut();
+			console.log("User logged out");
 		},
 
 		render: function(){
+			var currentUser = Parse.User.current();
+			if (currentUser) currentUser = currentUser.toJSON();
 			var data = {
-				// Add data later
+				user: currentUser,
+				test: 'test'
 			};
-			this.template = this.template( data )
-			$(this.el).html( this.template );
+			var compiled_template = _.template( navbarTemplate );
+			compiled_template = compiled_template(data);
+			this.$el.html( compiled_template );
 			return this
 		}
 	});

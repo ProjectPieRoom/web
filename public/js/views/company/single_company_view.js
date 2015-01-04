@@ -5,18 +5,16 @@ define([
   'parse',
   'blurjs',
   'text!templates/company/single_company_template.html',
-  '../components/navbar_view',
   './single_company_reviews',
   'css!/css/components/navbar/navbar.css',
   'css!/css/company/single_company.css',
-], function($, _, Backbone, Parse, blurjs, SingleCompanyTemplate, NavBarView, SingleCompanyReviewsView){
+], function($, _, Backbone, Parse, blurjs, SingleCompanyTemplate, SingleCompanyReviewsView){
   var singleCompanyView = Parse.View.extend({
     el: $('#app-view'),
     template: _.template( SingleCompanyTemplate ),
 
     initialize: function(options) {
       this.model = options.company;
-      this.navbar = new NavBarView({el: '#navbarDiv'});
       this.company_reviews = new SingleCompanyReviewsView({companyName: this.model.get('CompanyName')});
     },
 
@@ -26,7 +24,6 @@ define([
       };
       this.template = this.template( data );
       this.$el.html( this.template );
-      this.navbar.render();
       this.company_reviews.render();
       this.$('#overview_content').blurjs({
         source: '#overview_panel',

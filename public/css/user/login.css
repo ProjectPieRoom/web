@@ -23,7 +23,7 @@
 	text-align: center;
 }
 
-#facebook_login_div #facebook_signup_button {
+#login_div #facebook_login_div #facebook_signup_button {
 	max-height: 40px;
 	cursor: pointer;
 }

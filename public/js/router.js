@@ -4,6 +4,7 @@ define([
   'backbone',
   'parse',
   'models/AppState',
+  'views/components/navbar_view',
   'views/company/index_view',
   'views/company/single_company_view',
   'views/user/new_user_view',
@@ -12,6 +13,7 @@ define([
   'views/loggedout/loggedout_view',
   'views/home/home_view',
 ], function($, _, Backbone, Parse, AppState,
+  NavBarView,
   CompanyIndexView, SingleCompanyView,
   NewUserView, LoginView,
   AdminView,
@@ -44,6 +46,7 @@ define([
 
     initialize: function(options){
       this.companies = options.companies;
+      this.navbar_view = new NavBarView();
     },
 
     search: function() {
@@ -51,6 +54,7 @@ define([
         companies: this.companies,
       });
       companyIndexView.render();
+      this.navbar_view.render();
     },
 
     company: function(query) {
@@ -62,6 +66,7 @@ define([
         company: company,
       });
       singleCompanyView.render();
+      this.navbar_view.render();
     },
 
     new_user: function(email) {
@@ -69,11 +74,13 @@ define([
         email: email
       });
       newUserView.render();
+      this.navbar_view.render();
     },
 
     login: function() {
       var loginView = new LoginView({});
       loginView.render();
+      this.navbar_view.render();
     },
 
     admin: function() {
@@ -81,6 +88,7 @@ define([
         companies: this.companies
       });
       adminView.render();
+      this.navbar_view.render();
     },
 
     //merge into index
@@ -92,6 +100,7 @@ define([
     index: function() {
       var homeView = new HomeView();
       homeView.render();
+      this.navbar_view.render();
     },
   });
 

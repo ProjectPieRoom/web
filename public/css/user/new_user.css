@@ -21,3 +21,14 @@
 #new_user #duplicate_email_text {
 	display: block;
 }
+
+#new_user #facebook_login_div {
+	margin-top: 20px;
+	width: 100%;
+	text-align: center;
+}
+
+#new_user #facebook_login_div #facebook_signup_button {
+	max-height: 40px;
+	cursor: pointer;
+}

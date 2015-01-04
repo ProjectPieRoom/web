@@ -4,10 +4,9 @@ define([
   'backbone',
   'parse',
   'text!templates/user/login_template.html',
-  '../components/navbar_view',
   'css!/css/components/navbar/navbar.css',
   'css!/css/user/login.css',
-], function($, _, Backbone, Parse, LoginTemplate, NavBarView){
+], function($, _, Backbone, Parse, LoginTemplate){
   var loginView = Parse.View.extend({
     el: $('#app-view'),
     template: _.template( LoginTemplate ),
@@ -17,19 +16,36 @@ define([
       'click #facebook_signup_button': 'facebookLogin'
     },
 
-    initialize: function() {
-      this.navbar = new NavBarView({el: '#navbarDiv'});
+    initialize: function(options) {
     },
 
+    //See copy in signup. need to merge eventually to prevent code dup
     facebookLogin: function() {
-      Parse.FacebookUtils.logIn(null, {
+      Parse.FacebookUtils.logIn('public_profile,user_friends,email', {
         success: function(user) {
           if (!user.existed()) {
-            //alert("User signed up and logged in through Facebook!");
+            FB.api('/me', {fields: 'first_name, last_name, email'}, function(response) {
+              console.log(response);
+              user.set("username", response.email);
+              user.set("email", response.email);
+              user.set("FirstName", response.first_name);
+              user.set("LastName", response.last_name);
+              user.save(null, {
+                success: function(user) {
+                  window.location.href = "/#/";
+                },
+                error: function(user, error) {
+                  // Execute any logic that should take place if the save fails.
+                  // error is a Parse.Error with an error code and message.
+                  alert('Failed to create new object, with error code: ' + error.message);
+                }
+              });
+            });
           } else {
             //alert("User logged in through Facebook!");
+            window.location.href = "/#/";
           }
-          window.location.href = "/#/";
+          
         },
         error: function(user, error) {
           alert("User cancelled the Facebook login or did not fully authorize.");
@@ -63,7 +79,6 @@ define([
       this.template = this.template( data );
       this.$el.html( this.template );
       this.formFieldReset();
-      this.navbar.render();
     }
   });
   return loginView;

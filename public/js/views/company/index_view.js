@@ -5,10 +5,9 @@ define([
   'parse',
   'text!templates/company/index_template.html',
   'views/company/company_view',
-  '../components/navbar_view',
   'css!/css/company/index.css',
   'css!/css/company/company.css',
-], function($, _, Backbone, Parse, IndexTemplate, CompanyView, NavBarView){
+], function($, _, Backbone, Parse, IndexTemplate, CompanyView){
   var CompanyIndexView = Parse.View.extend({
     el: $('#app-view'),
     template: _.template( IndexTemplate ),
@@ -16,7 +15,6 @@ define([
     initialize: function(options) {
       this.collection = options.companies;
       this.collection.bind('add', this.addOne);
-      this.navbar = new NavBarView({el: '#navbarDiv'});
     },
 
     addAll: function() {
@@ -33,7 +31,6 @@ define([
     render: function(){
       this.$el.html( this.template );
       this.addAll();
-      this.navbar.render();
       return this;
     }
   });

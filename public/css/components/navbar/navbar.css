@@ -10,3 +10,7 @@
 .navbar {
 	border: 0px solid transparent;
 }
+
+#navbar .dropdown-menu {
+	background-image: linear-gradient(to bottom, #8D2C51 0%, #fff 500%);
+}

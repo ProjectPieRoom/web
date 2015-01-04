@@ -9,7 +9,6 @@ define([
   'text!templates/home/home_template.html',
   
   //Views
-  '../components/navbar_view',
   './favoriteCompanies_view',
   './popularCompanies_view',
 
@@ -19,13 +18,12 @@ define([
   //CSS
   'css!/css/components/navbar/navbar.css',
   'css!/css/home/home.css',
-], function($, _, Backbone, Parse, HomeTemplate, NavBarView, FavoriteCompaniesView, PopularCompaniesView, CompaniesCollection, UserUtils){
+], function($, _, Backbone, Parse, HomeTemplate, FavoriteCompaniesView, PopularCompaniesView, CompaniesCollection, UserUtils){
   var HomeView = Parse.View.extend({
     el: $('#app-view'),
     template: _.template( HomeTemplate ),
 
     initialize: function() {
-      this.navbar = new NavBarView({el: '#navbarDiv'});
       this.favCoView = new FavoriteCompaniesView({el: '#favoriteCompaniesDiv'});
       var companies = new CompaniesCollection();
       companies.fetch({
@@ -43,7 +41,6 @@ define([
       var data = {};
       this.template = this.template( data );
       this.$el.html( this.template );
-      this.navbar.render();
       this.favCoView.render();
     }
   });
