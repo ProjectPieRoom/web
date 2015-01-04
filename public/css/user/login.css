@@ -17,3 +17,13 @@
 #login_div #login_form_submit_btn {
 	width: 100%;
 }
+
+#login_div #facebook_login_div {
+	width: 100%;
+	text-align: center;
+}
+
+#facebook_login_div #facebook_signup_button {
+	max-height: 40px;
+	cursor: pointer;
+}

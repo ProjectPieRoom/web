@@ -1,0 +1,5 @@
+[12/31/14, 2:13:35 AM] prostrykerz: #1 issue: Routing
+[12/31/14, 2:13:57 AM] prostrykerz: Andrew: company page, company boxes
+[12/31/14, 2:14:06 AM] prostrykerz: and Facebook login
+[12/31/14, 2:14:16 AM] prostrykerz: Travis: profile, application
+[12/31/14, 2:15:42 AM] prostrykerz: if we have time: new application alert

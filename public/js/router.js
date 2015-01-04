@@ -1,4 +1,3 @@
-// Filename: router.js
 define([
   'jquery',
   'underscore',
@@ -31,6 +30,7 @@ define([
 
       //User
       'join/:email': 'new_user',
+      'join/': 'new_user',
       'login': 'login',
 
       //Misc

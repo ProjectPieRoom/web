@@ -85,8 +85,8 @@ define([
       var data = {};
       this.template = this.template( data );
       this.$el.html( this.template );
-      if( this.email ) this.$('#email_address_input').val(this.email);
       this.formFieldReset();
+      if( this.email ) this.$('#email_address_input').val(this.email);
       this.navbar.render();
     }
   });

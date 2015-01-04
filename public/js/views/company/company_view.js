@@ -19,7 +19,7 @@ define([
     render: function(){
       var data = {
         company: this.model.toJSON(),
-        shortenedDescription: this.truncateDescription(this.model.get('Description'), 200)
+        //shortenedDescription: this.truncateDescription(this.model.get('Description'), 200)
       };
       this.template = this.template( data );
       this.$el.html( this.template );

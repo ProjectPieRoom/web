@@ -10,10 +10,13 @@
 	height: 150px;
 	margin-bottom: 20px;
 	border-radius: 10px;
+	max-width: 500px;
 }
 
-.company_tile .description {
+.company_tile .description_box {
+	overflow: hidden;
 	text-overflow: ellipsis;
+	max-height: 150px;
 }
 
 .company_tile .company_name {

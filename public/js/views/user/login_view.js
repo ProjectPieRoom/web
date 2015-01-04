@@ -13,11 +13,28 @@ define([
     template: _.template( LoginTemplate ),
 
     events: {
-      'submit': 'onFormSubmit'
+      'submit': 'onFormSubmit',
+      'click #facebook_signup_button': 'facebookLogin'
     },
 
     initialize: function() {
       this.navbar = new NavBarView({el: '#navbarDiv'});
+    },
+
+    facebookLogin: function() {
+      Parse.FacebookUtils.logIn(null, {
+        success: function(user) {
+          if (!user.existed()) {
+            //alert("User signed up and logged in through Facebook!");
+          } else {
+            //alert("User logged in through Facebook!");
+          }
+          window.location.href = "/#/";
+        },
+        error: function(user, error) {
+          alert("User cancelled the Facebook login or did not fully authorize.");
+        }
+      });
     },
 
     onFormSubmit: function(e) {
