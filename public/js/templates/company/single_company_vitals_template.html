@@ -1,0 +1,41 @@
+<span class="heading">Vitals</span>
+<br />
+<% if (angellistData.locations) { %>
+	<div class="data_row">
+		<div class="key">Location</div>
+		<div class="value">
+			<% for(var i = 0; i < angellistData.locations.length; i++) { %>
+				<%= angellistData.locations[i].display_name %>
+				<% i > 0 ? ',' : '' %>
+			<% } %>
+		</div>
+	</div>
+<% } %>
+<% if (angellistData.company_size) { %>
+	<div class="data_row">
+		<div class="key">Size</div>
+		<div class="value"><%= angellistData.company_size %> employees</div>
+	</div>
+<% } %>
+<!-- DOES NOT EXIST. TODO -->
+<% if (angellistData.funding) { %>
+	<div class="data_row">
+		<div class="key">Funding</div>
+		<div class="value">
+			$10M Series A in 2014
+			<br />
+			$2.1M in 2013
+		</div>
+	</div>
+<% } %>
+<% if (angellistData.markets) { %>
+	<div class="data_row">
+		<div class="key">Markets</div>
+		<div class="value">
+			<% for(var i = 0; i < angellistData.markets.length; i++) { %>
+				<%= angellistData.markets[i].display_name %>
+				<% i > 0 ? ',' : '' %>
+			<% } %>
+		</div>
+	</div>
+<% } %>

@@ -24,8 +24,7 @@ define([
 			var currentUser = Parse.User.current();
 			if (currentUser) currentUser = currentUser.toJSON();
 			var data = {
-				user: currentUser,
-				test: 'test'
+				user: currentUser
 			};
 			var compiled_template = _.template( navbarTemplate );
 			compiled_template = compiled_template(data);

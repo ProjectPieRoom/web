@@ -14,16 +14,31 @@ define([
       this.companyName = options.companyName;
     },
 
+    extractCompanyInfo: function(response) {
+      var isValid = false;
+      //Checks
+      if( response && response.success && response.status == "OK" && response.response.employers && response.response.employers.length > 0 ) isValid = true;
+      if( !isValid ) return null;
+      //Extraction
+      for(var i = 0; i < response.response.employers.length; i++) {
+        company = response.response.employers[i];
+        if( company.exactMatch ) return company;
+      }
+      return null;
+    },
+
     render: function(){
       var url = "http://api.glassdoor.com/api/api.htm?t.p=28230&t.k=eawjFOeuPuY&userip=0.0.0.0&useragent=" + navigator.userAgent + "&format=json&v=1&action=employers" + "&q=" + this.companyName;
-      that = this;
+      var that = this;
       $.ajax({
         url: url,
         dataType: "jsonp",
         success: function( response ) {
           var data = {
           };
-          if (response && response.success && response.response.employers.length == 1) data['glassdoorData'] = response.response.employers[0];
+          var GDCompanyInfo = that.extractCompanyInfo(response);
+          if( GDCompanyInfo ) data['glassdoorData'] = GDCompanyInfo;
+          else return;
           that.template = that.template( data );
           $(that.elem).html( that.template );
           $(".review_row").each(function(index) {
