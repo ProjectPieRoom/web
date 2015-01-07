@@ -1,0 +1,49 @@
+#home_container {
+	#mainContent {
+		position: relative;
+		background-color: white;
+		margin: 3% 3% 3% 3%;
+		overflow: hidden;
+		padding: 2% 2% 2% 2%;
+		border-radius: 10px;
+	}
+
+	#background {
+		background-image: url(/img/SF_back.jpg);
+		background-size: cover;
+		overflow: hidden;
+	}
+
+	#mainContent::before {
+		/*Height is hacked calculated by 50px + #mainContent Height
+		Take total height of #app-view / above to get percentage*/
+		height: 125%;
+		/*Width is total width / padding + #mainContent width*/
+		width: 106.38097%;
+		overflow: hidden;
+		z-index: -1;
+		display: block;
+		position: absolute;
+		content: ' ';
+		background-image: url(/img/SF_back.jpg);
+		-webkit-filter: url('#blur');
+		filter: url('#blur');
+		-webkit-filter: blur(4px);
+		filter: blur(4px);
+		background-size: cover;
+		opacity: 0.4;
+	}
+
+	/* TRANSFORMATIONS */
+
+	#mainContent::before {
+	  transform: translateY(0);
+	  transform: translateX(-5%) translateY(-12.5%) translateZ(0);
+	}
+
+	#mainContent {
+	  transform: translateY(0);
+	  transform: translateY(0) translateZ(0);
+	}
+} 
+

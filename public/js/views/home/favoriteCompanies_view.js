@@ -5,9 +5,6 @@ define([
   'parse',
   'd3',
   'text!templates/home/favoriteCompanies_template.html',
-
-  //CSS
-  'css!/css/home/favoriteCompanies.css',
 ], function($, _, Backbone, Parse, d3, FavCoTemplate){
   var FavoriteCompaniesView = Parse.View.extend({
     template: _.template( FavCoTemplate ),

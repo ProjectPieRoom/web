@@ -14,10 +14,6 @@ define([
 
   //Collections
   'collections/company/companies_collection',
-
-  //CSS
-  'css!/css/components/navbar/navbar.css',
-  'css!/css/home/home.css',
 ], function($, _, Backbone, Parse, HomeTemplate, FavoriteCompaniesView, PopularCompaniesView, CompaniesCollection, UserUtils){
   var HomeView = Parse.View.extend({
     el: $('#app-view'),

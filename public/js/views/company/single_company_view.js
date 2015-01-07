@@ -8,8 +8,6 @@ define([
   './single_company_reviews',
   './single_company_vitals',
   './single_company_description',
-  'css!/css/components/navbar/navbar.css',
-  'css!/css/company/single_company.css',
 ], function($, _, Backbone, Parse, blurjs,
             SingleCompanyTemplate, SingleCompanyReviewsView, SingleCompanyVitalsView, SingleCompanyDescriptionView){
   var singleCompanyView = Parse.View.extend({

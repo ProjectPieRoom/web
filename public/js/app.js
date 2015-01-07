@@ -6,8 +6,6 @@ define([
   'router',
   'parse',
   'collections/company/companies_collection',
-  //CSS
-  'css!/css/app/app.css',
 ], function($, _, Backbone, AppRouter, Parse, CompaniesCollection){
   var initialize = function(){
     var companies = new CompaniesCollection();

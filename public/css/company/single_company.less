@@ -1,0 +1,81 @@
+#single_company_container {
+	/*background-color: #EAEAEA;*/
+	background-color: white;
+	font-family: 'helvetica neue', arial, helvetica, freesans, 'liberation sans', 'numbus sans l', sans-serif;
+
+	#overview_panel {
+		background-image: url("/img/NYC2.jpg");
+		background-position: 0% 50%;
+		background-size: 100% 100%;
+		/*background-repeat: no-repeat;*/
+
+		#overview_content {
+			padding: 40px 25px;
+			text-align: center;
+			color: white;
+
+			.welcome_text {
+				font-size: 50px;
+				font-weight: 100;
+				line-height: 1.8;
+				text-shadow: 1px 1px 2px rgba(20,20,20,.75);
+				color: #FAFAFA;
+			}
+
+			.company_slogan {
+				color: #ebebeb;
+				font-size: 24px;
+				line-height: 1.4;
+				font-weight: 100;
+			}
+		}
+	}
+
+	#about_panel {
+		background-color: #f9f9fa;
+		padding: 20px 35px 20px 35px;
+		margin: 0 auto;
+
+		.about_section {
+			display: table-cell;
+			width: 33%;
+			float: left;
+			color: rgb(68, 68, 68);
+			padding: 10px 40px;
+
+			.heading {
+				text-transform: uppercase;
+				font-weight: 200;
+				color: #111;
+				letter-spacing: 1px;
+			}
+			.data_row {
+				width: 100%;
+				float: left;
+				margin-top: 30px;
+
+				.key {
+					text-transform: uppercase;
+					font-weight: 200;
+					color: #888;
+					float: left;
+					width: 30%;
+					letter-spacing: 1px;
+				}
+
+				.value {
+					font-weight: 400;
+					font-size: 15px;
+					color: #444;
+					float: right;
+					width: 60%;
+					text-align: right;
+				}
+			}
+		}
+		#company_about {
+				border-left: 1px solid #eee;
+				border-right: 1px solid #eee;
+			}
+	}
+}

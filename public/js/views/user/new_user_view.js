@@ -4,8 +4,6 @@ define([
   'backbone',
   'parse',
   'text!templates/user/new_user_template.html',
-  'css!/css/components/navbar/navbar.css',
-  'css!/css/user/new_user.css',
 ], function($, _, Backbone, Parse, NewUserTemplate){
   var newUserView = Parse.View.extend({
     el: $('#app-view'),

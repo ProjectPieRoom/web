@@ -9,9 +9,6 @@ define([
   
   //Utils
   'utils/user_utils',
-
-  //CSS
-  'css!/css/home/popularCompanies.css',
 ], function($, _, Backbone, Parse, d3, PopCoTemplate, CompanyView, UserUtils){
   var PopularCompaniesView = Parse.View.extend({
     template: _.template( PopCoTemplate ),

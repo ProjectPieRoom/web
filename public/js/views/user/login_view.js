@@ -4,8 +4,6 @@ define([
   'backbone',
   'parse',
   'text!templates/user/login_template.html',
-  'css!/css/components/navbar/navbar.css',
-  'css!/css/user/login.css',
 ], function($, _, Backbone, Parse, LoginTemplate){
   var loginView = Parse.View.extend({
     el: $('#app-view'),

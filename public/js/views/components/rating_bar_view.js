@@ -3,8 +3,7 @@ define([
   'underscore',
   'backbone',
   'parse',
-  'text!templates/components/rating_bar.html',
-  'css!/css/components/rating_bar.css',
+  'text!templates/components/rating_bar.html'
 ], function($, _, Backbone, Parse, RatingBarTemplate){
   var RatingBar = Parse.View.extend({
     template: _.template( RatingBarTemplate ),

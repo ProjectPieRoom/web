@@ -95,6 +95,7 @@ define([
     loggedOut: function() {
       var loggedOutView = new LoggedOutView();
       loggedOutView.render();
+      this.navbar_view.unrender();
     },
 
     index: function() {

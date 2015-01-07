@@ -30,6 +30,10 @@ define([
 			compiled_template = compiled_template(data);
 			this.$el.html( compiled_template );
 			return this
+		},
+
+		unrender: function() {
+			this.$el.html( "" );
 		}
 	});
 	// Our module now returns our view

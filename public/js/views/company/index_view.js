@@ -4,9 +4,7 @@ define([
   'backbone',
   'parse',
   'text!templates/company/index_template.html',
-  'views/company/company_view',
-  'css!/css/company/index.css',
-  'css!/css/company/company.css',
+  'views/company/company_view'
 ], function($, _, Backbone, Parse, IndexTemplate, CompanyView){
   var CompanyIndexView = Parse.View.extend({
     el: $('#app-view'),

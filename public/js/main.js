@@ -64,5 +64,5 @@ require(['parse', 'facebook', 'app'], function(Parse, FB, App) {
 });
 
 require(['bootstrap'], function() {
-  //necessary from dropdown in navbar
+  //necessary for dropdown in navbar
 });

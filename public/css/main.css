@@ -1,0 +1,290 @@
+.company_tile {
+  box-shadow: -5px 5px 5px #888888;
+  /*border: 1px solid black;*/
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-table;
+  width: 23%;
+  height: 150px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+}
+.company_tile .description_box {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 150px;
+}
+.company_tile .company_name {
+  font-size: 20px;
+}
+.company_tile .company_logo {
+  max-height: 45px;
+  max-width: 45px;
+  margin-right: 5px;
+  float: left;
+}
+.company_tile .company_slogan {
+  color: grey;
+  font-size: 12px;
+}
+.company_tile .icon {
+  margin-top: 2px;
+  padding: 5px 5px 5px 5px;
+  height: 45px;
+  width: 45px;
+  max-height: 45px;
+  max-width: 45px;
+  cursor: pointer;
+}
+.company_tile hr {
+  margin-bottom: 3px;
+  margin-top: 5px;
+}
+#company_index_container #sidebar {
+  width: 30%;
+  max-width: 400px;
+}
+#company_index_container #content {
+  width: 70%;
+}
+#single_company_container {
+  /*background-color: #EAEAEA;*/
+  background-color: white;
+  font-family: 'helvetica neue', arial, helvetica, freesans, 'liberation sans', 'numbus sans l', sans-serif;
+}
+#single_company_container #overview_panel {
+  background-image: url("/img/NYC2.jpg");
+  background-position: 0% 50%;
+  background-size: 100% 100%;
+  /*background-repeat: no-repeat;*/
+}
+#single_company_container #overview_panel #overview_content {
+  padding: 40px 25px;
+  text-align: center;
+  color: white;
+}
+#single_company_container #overview_panel #overview_content .welcome_text {
+  font-size: 50px;
+  font-weight: 100;
+  line-height: 1.8;
+  text-shadow: 1px 1px 2px rgba(20, 20, 20, 0.75);
+  color: #FAFAFA;
+}
+#single_company_container #overview_panel #overview_content .company_slogan {
+  color: #ebebeb;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 100;
+}
+#single_company_container #about_panel {
+  background-color: #f9f9fa;
+  padding: 20px 35px 20px 35px;
+  margin: 0 auto;
+}
+#single_company_container #about_panel .about_section {
+  display: table-cell;
+  width: 33%;
+  float: left;
+  color: #444444;
+  padding: 10px 40px;
+}
+#single_company_container #about_panel .about_section .heading {
+  text-transform: uppercase;
+  font-weight: 200;
+  color: #111;
+  letter-spacing: 1px;
+}
+#single_company_container #about_panel .about_section .data_row {
+  width: 100%;
+  float: left;
+  margin-top: 30px;
+}
+#single_company_container #about_panel .about_section .data_row .key {
+  text-transform: uppercase;
+  font-weight: 200;
+  color: #888;
+  float: left;
+  width: 30%;
+  letter-spacing: 1px;
+}
+#single_company_container #about_panel .about_section .data_row .value {
+  font-weight: 400;
+  font-size: 15px;
+  color: #444;
+  float: right;
+  width: 60%;
+  text-align: right;
+}
+#single_company_container #about_panel #company_about {
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+#navbarDiv {
+  background-color: transparent;
+  color: white;
+}
+#navbarDiv a {
+  color: white;
+}
+#navbarDiv .navbar {
+  border: 0px solid transparent;
+  margin-bottom: 0px;
+}
+#navbarDiv #navbar .dropdown-menu {
+  background-image: linear-gradient(to bottom, #8d2c51 0%, #ffffff 500%);
+}
+.rating_bar {
+  width: 100%;
+  height: 20px;
+}
+.rating_bar .value_text {
+  float: right;
+  margin-right: 5px;
+}
+.rating_bar .rating_bar_bar {
+  float: right;
+  height: 20px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  padding: 2px 0px;
+}
+.rating_bar .rating_bar_divider_container {
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+}
+.rating_bar .rating_bar_divider {
+  border-left: 1px solid white;
+}
+.rating_bar .rating_bar_divider:first {
+  border: 0px;
+}
+#favoriteCompaniesDiv {
+  box-shadow: -5px 5px 5px #888888;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1px 1% 20px 1%;
+}
+#home_container {
+  /* TRANSFORMATIONS */
+}
+#home_container #mainContent {
+  position: relative;
+  background-color: white;
+  margin: 3% 3% 3% 3%;
+  overflow: hidden;
+  padding: 2% 2% 2% 2%;
+  border-radius: 10px;
+}
+#home_container #background {
+  background-image: url(/img/SF_back.jpg);
+  background-size: cover;
+  overflow: hidden;
+}
+#home_container #mainContent::before {
+  /*Height is hacked calculated by 50px + #mainContent Height
+		Take total height of #app-view / above to get percentage*/
+  height: 125%;
+  /*Width is total width / padding + #mainContent width*/
+  width: 106.38097%;
+  overflow: hidden;
+  z-index: -1;
+  display: block;
+  position: absolute;
+  content: ' ';
+  background-image: url(/img/SF_back.jpg);
+  -webkit-filter: url('#blur');
+  filter: url('#blur');
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+  background-size: cover;
+  opacity: 0.4;
+}
+#home_container #mainContent::before {
+  transform: translateY(0);
+  transform: translateX(-5%) translateY(-12.5%) translateZ(0);
+}
+#home_container #mainContent {
+  transform: translateY(0);
+  transform: translateY(0) translateZ(0);
+}
+#popularCompaniesDiv {
+  box-shadow: -5px 5px 5px #888888;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1px 1% 20px 1%;
+}
+#login_div {
+  text-align: center;
+}
+#login_div #page_title {
+  font-size: 40px;
+  color: #8D2C51;
+}
+#login_div #login_form_container {
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+  color: #8D2C51;
+}
+#login_div #login_form_container #facebook_login_div {
+  width: 100%;
+  text-align: center;
+}
+#login_div #login_form_container #facebook_login_div #facebook_signup_button {
+  max-height: 40px;
+  cursor: pointer;
+}
+#login_div #login_form_container #login_form_submit_btn {
+  width: 100%;
+}
+#new_user {
+  text-align: center;
+}
+#new_user #page_title {
+  font-size: 40px;
+  color: #8D2C51;
+}
+#new_user #new_user_form_container {
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+  color: #8D2C51;
+}
+#new_user #new_user_form_container #new_user_form_submit_btn {
+  width: 100%;
+}
+#new_user #new_user_form_container #duplicate_email_text {
+  display: block;
+}
+#new_user #new_user_form_container #facebook_login_div {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+#new_user #new_user_form_container #facebook_login_div #facebook_signup_button {
+  max-height: 40px;
+  cursor: pointer;
+}
+.parallax-pane {
+  color: #FFFFFF;
+  width: 100%;
+}
+#parallax-pane-1 {
+  /*background: #8D2C51 url(http://www.smitwallpaper.com/wallpaper/original/digital-wallpaper-3_1.jpg) no-repeat top center;*/
+  background: #8D2C51;
+  height: 300;
+}
+#parallax-pane-2 {
+  background: #ffffff url(/img/SanFran.jpg) no-repeat top center;
+  background-size: 100% 100%;
+  height: 400px;
+}
+#parallax-pane-3 {
+  background: #FE8C1C;
+  height: 400px;
+}
