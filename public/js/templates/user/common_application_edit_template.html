@@ -1,0 +1,272 @@
+<div id="navbarDiv"></div>
+<div id="content_container">
+	<br>
+	<form id="common_app_form">
+		<div id="personal_info" class="form-group">
+			<div class="heading">Personal Information</div>
+			<hr>
+			<div>
+			    <label for="first_name">Full Name</label>
+			    <br>
+			    <input type="text" class="form-control" id="first_name" name="firstname" placeholder="First">
+			    <input type="text" class="form-control" name="middlename" placeholder="Middle">
+			    <input type="text" class="form-control" name="lastname" placeholder="Last">
+			 </div>
+			 <br>
+			 <div>
+			    <label for="address">Street Address</label>
+			    <br>
+			    <input type="text" class="form-control" id="address" name="address1" placeholder="Street, P.O. Box, etc.">
+			    <input type="text" class="form-control" id="address2" name="address2" placeholder="Apt, Suite, Unit, etc.">
+			    <br>
+			    <input type="text" class="form-control" id="city" name="city" placeholder="City">
+			    <input type="text" class="form-control" id="state" name="state" placeholder="State">
+			    <input type="text" class="form-control" id="country" name="country" placeholder="Country">
+			    <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Zipcode">
+			 </div>
+			 <br>
+			 <div>
+			    <label for="contact">Contact Information</label>
+			    <br>
+			    <input type="email" class="form-control" id="contact" name="email" placeholder="Email">
+			    <input type="tel" class="form-control" id="phone1" name="phone1" placeholder="Phone Number (Preferred)">
+			    <input type="tel" class="form-control" id="phone2" name="phone2" placeholder="Phone Number (Alternate)">
+			 </div>
+		</div>
+		<br>
+		<div id="work_authorization" class="form-group">
+			<div class="heading">Work Authorization</div>
+			<hr>
+			<div>
+			    <label for="work_q1">Are you legally authorized to work in the United States?</label>
+			    <br>
+			    <div class="radio">
+			    	<label class="radio-inline">
+					    <input type="radio" id="work_q1" name="authorized" value="yes">Yes
+					</label>
+					<label class="radio-inline">
+					    <input type="radio" name="authorized" value="no">No
+					</label>
+				</div>
+				<label for="work_q1_explaination">If no, please explain:</label>
+				<br>
+				<textarea type="text" form="common_app_form" class="form-control" id="work_q1_explaination" rows="3" name="authorized_explanation" placeholder="Please Explain."/>
+			</div>
+		</div>
+		<br>
+		<div id="education" class="form-group">
+			<div class="heading">Education Background</div>
+			<hr>
+			<div>
+			    <label for="ed_div">Please list your educational background below, starting with the most recent education.</label>
+			    <br>
+			    <div id="ed_div">
+			    	<span class="form-control school">Name of School</span><span class="form-control location">Location</span><span class="form-control degree">Degree</span><span class="form-control major">Major Subject</span><span class="form-control graduate">Did you Graduate?</span>
+			    	<br>
+					<input type="text" class="form-control school" name="school_1"><input type="text" class="form-control location" name="location_1"><input type="text" class="form-control degree" name="degree_1"><input type="text" class="form-control major" name="major_1"><span class="form-control radio graduate" id="radio_graduate">
+						<label class="radio-inline">
+						    <input type="radio" name="graduate_1" value="yes">Yes</label>
+						<label class="radio-inline">
+						    <input type="radio" name="graduate_1" value="no">No</label>
+						<label class="radio-inline">
+						    <input type="radio" name="graduate_1" value="currentStudent">Current Student</label>
+					</span>
+					<br>
+					<input type="text" class="form-control school" name="school_2"><input type="text" class="form-control location" name="location_2"><input type="text" class="form-control degree" name="degree_2"><input type="text" class="form-control major" name="major_2"><span class="form-control radio graduate" id="radio_graduate">
+						<label class="radio-inline">
+						    <input type="radio" name="graduate_2" value="yes">Yes</label>
+						<label class="radio-inline">
+						    <input type="radio" name="graduate_2" value="no">No</label>
+						<label class="radio-inline">
+						    <input type="radio" name="graduate_2" value="currentStudent">Current Student</label>
+					</span>
+					<br>
+					<input type="text" class="form-control school" name="school_3"><input type="text" class="form-control location" name="location_3"><input type="text" class="form-control degree" name="degree_3"><input type="text" class="form-control major" name="major_3"><span class="form-control radio graduate" id="radio_graduate">
+						<label class="radio-inline">
+						    <input type="radio" name="graduate_3" value="yes">Yes</label>
+						<label class="radio-inline">
+						    <input type="radio" name="graduate_3" value="no">No</label>
+						<label class="radio-inline">
+						    <input type="radio" name="graduate_3" value="currentStudent">Current Student</label>
+					</span>
+					<br>
+					<input type="text" class="form-control school" name="school_4"><input type="text" class="form-control location" name="location_4"><input type="text" class="form-control degree" name="degree_4"><input type="text" class="form-control major" name="major_4"><span class="form-control radio graduate" id="radio_graduate">
+						<label class="radio-inline">
+						    <input type="radio" name="graduate_4" value="yes">Yes</label>
+						<label class="radio-inline">
+						    <input type="radio" name="graduate_4" value="no">No</label>
+						<label class="radio-inline">
+						    <input type="radio" name="graduate_4" value="currentStudent">Current Student</label>
+					</span>
+			    </div>
+			</div>
+		</div>
+		<br>
+		<div id="professional_references" class="form-group">
+			<div class="heading">Professional References</div>
+			<hr>
+			<div>
+			    <label for="ref_name_1">Person 1</label>
+			    <br>
+			    <input type="text" class="form-control" id="ref_name_1" name="ref_name_1" placeholder="Name">
+			    <input type="text" class="form-control" name="ref_title_1" placeholder="Title">
+			    <input type="text" class="form-control" name="ref_relationship_1" placeholder="Relationship">
+			    <br>
+			    <h6>Do we have permission to contact?</h6>
+			    <span class="radio ref_contacts">
+					<label class="radio-inline">
+					    <input type="radio" name="ref_can_contact_1" value="yes">Yes</label>
+					<label class="radio-inline">
+					    <input type="radio" name="ref_can_contact_1" value="no">No</label>
+				</span>
+				<input type="tel" class="form-control ref_phone" name="ref_phone_1" placeholder="Phone Number">
+				<input type="email" class="form-control" name="ref_email_1" placeholder="Email">
+			 </div>
+			 <br>
+			 <div>
+			    <label for="ref_name_2">Person 2</label>
+			    <br>
+			    <input type="text" class="form-control" id="ref_name_2" name="ref_name_2" placeholder="Name">
+			    <input type="text" class="form-control" name="ref_title_2" placeholder="Title">
+			    <input type="text" class="form-control" name="ref_relationship_2" placeholder="Relationship">
+			    <br>
+			    <h6>Do we have permission to contact?</h6>
+			    <span class="radio ref_contacts">
+					<label class="radio-inline">
+					    <input type="radio" name="ref_can_contact_2" value="yes">Yes</label>
+					<label class="radio-inline">
+					    <input type="radio" name="ref_can_contact_2" value="no">No</label>
+				</span>
+				<input type="tel" class="form-control ref_phone" name="ref_phone_2" placeholder="Phone Number">
+				<input type="email" class="form-control" name="ref_email_2" placeholder="Email">
+			 </div>
+			 <br>
+			 <div>
+			    <label for="ref_name_3">Person 3</label>
+			    <br>
+			    <input type="text" class="form-control" id="ref_name_3" name="ref_name_3" placeholder="Name">
+			    <input type="text" class="form-control" name="ref_title_3" placeholder="Title">
+			    <input type="text" class="form-control" name="ref_relationship_3" placeholder="Relationship">
+			    <br>
+			    <h6>Do we have permission to contact?</h6>
+			    <span class="radio ref_contacts">
+					<label class="radio-inline">
+					    <input type="radio" name="ref_can_contact_3" value="yes">Yes</label>
+					<label class="radio-inline">
+					    <input type="radio" name="ref_can_contact_3" value="no">No</label>
+				</span>
+				<input type="tel" class="form-control ref_phone" name="ref_phone_3" placeholder="Phone Number">
+				<input type="email" class="form-control" name="ref_email_3" placeholder="Email">
+			 </div>
+		</div>
+		<br>
+		<div id="employment" class="form-group">
+			<div class="heading">Employment History</div>
+			<hr>
+			<div>
+			    <label for="em_name_1">Current or Most Recent Employment</label>
+			    <br>
+			    <input type="text" class="form-control" id="em_name_1" name="em_name_1" placeholder="Name of Employer">
+				<span class="em_date">
+				    <h6>From: </h6>
+				    <input type="date" class="form-control" name="em_start_1">
+			    </span>
+			    <span class="em_date">
+				    <h6>To: </h6>
+				    <input type="date" class="form-control" name="em_end_1">
+			    </span>
+			    <br>
+			    <input type="text" class="form-control em_location" name="em_location_1" placeholder="Location (City, State/Country)">
+			    <input type="tel" class="form-control" name="em_phone_1" placeholder="Phone Number">
+			    <input type="text" class="form-control" name="em_salary_1" placeholder="Salary">
+			    <br>
+			    <input type="text" class="form-control em_title" name="em_title_1" placeholder="Job Title">
+			    <input type="text" class="form-control em_leaving" name="em_leaving_1" placeholder="Reason for Leaving">
+			 </div>
+			 <br>
+			 <div>
+			    <label for="em_name_2">Previous Employment</label>
+			    <br>
+			    <input type="text" class="form-control" id="em_name_2" name="em_name_2" placeholder="Name of Employer">
+				<span class="em_date">
+				    <h6>From: </h6>
+				    <input type="date" class="form-control" name="em_start_2">
+			    </span>
+			    <span class="em_date">
+				    <h6>To: </h6>
+				    <input type="date" class="form-control" name="em_end_2">
+			    </span>
+			    <br>
+			    <input type="text" class="form-control em_location" name="em_location_2" placeholder="Location (City, State/Country)">
+			    <input type="tel" class="form-control" name="em_phone_2" placeholder="Phone Number">
+			    <input type="text" class="form-control" name="em_salary_2" placeholder="Salary">
+			    <br>
+			    <input type="text" class="form-control em_title" name="em_title_2" placeholder="Job Title">
+			    <input type="text" class="form-control em_leaving" name="em_leaving_2" placeholder="Reason for Leaving">
+			 </div>
+			 <br>
+			 <div>
+			    <label for="em_name_3">Previous Employment</label>
+			    <br>
+			    <input type="text" class="form-control" id="em_name_3" name="em_name_3" placeholder="Name of Employer">
+				<span class="em_date">
+				    <h6>From: </h6>
+				    <input type="date" class="form-control" name="em_start_3">
+			    </span>
+			    <span class="em_date">
+				    <h6>To: </h6>
+				    <input type="date" class="form-control" name="em_end_3">
+			    </span>
+			    <br>
+			    <input type="text" class="form-control em_location" name="em_location_3" placeholder="Location (City, State/Country)">
+			    <input type="tel" class="form-control" name="em_phone_3" placeholder="Phone Number">
+			    <input type="text" class="form-control" name="em_salary_3" placeholder="Salary">
+			    <br>
+			    <input type="text" class="form-control em_title" name="em_title_3" placeholder="Job Title">
+			    <input type="text" class="form-control em_leaving" name="em_leaving_3" placeholder="Reason for Leaving">
+			</div>
+		</div>
+		<br>
+		<div id="resume" class="form-group">
+			<div class="heading">Resume</div>
+			<hr>
+			<div>
+				<label for="resume_file">Please upload your current resume.</label>
+			    <br>
+			    <input type="file" id="resume_file" name="resume">
+			</div>
+		</div>
+		<br>
+		<div id="certification" class="form-group">
+			<div class="heading">Certification</div>
+			<hr>
+			<div>
+			    <label for="certs">Please read and agree to each.</label>
+			    <br>
+			    <div id="certs" class="checkbox">
+					<label>
+						<input type="checkbox" class="checkbox" name="cert_1">I certify that all information contained in this application is true and correct to the best of my knowledge.
+					</label>
+					<label>
+						<input type="checkbox" name="cert_2">I authorize any company on FindX to investigate all statements and information contained in this application, in my resume or that I otherwise have provided during my candidacy for employment. I understand that any misrepresentation, falsification, or material omission of information that I have provided on this application or otherwise during my candidacy may result in my failure to receive an offer, or, if I am hired, in my immediate dismissal from employment, regardless of the time elapsed before discovery.
+					</label>
+					<label>
+						<input type="checkbox" name="cert_3">I understand that any company on FindX may obtain consumer reports, consumer credit reports and/or investigative consumer reports about me, including a search of criminal records and verification of my education and employment history, in connection with this application or during my employment if hired. I understand that, if I receive an offer of employment, I will be asked to authorize the obtaining of such reports about me.
+					</label>
+					<label>
+						<input type="checkbox" name="cert_4">I authorize all persons, schools, companies and organizations contacted by or on behalf of any company on FindX about me to disclose to any company on FindX any and all letters, reports, and information related to my education and work records, without giving me prior notice of such disclosure. In addition, I hereby fully release any company on FindX, my former employers and all other persons, corporations, partnerships and associations from any and all claims, demands or liabilities arising out of or in any way related to such investigations or disclosures.
+					</label>
+					<label>
+						<input type="checkbox" name="cert_5">I understand and agree that submission of this application form does not constitute a promise or guarantee of employment with any company on FindX. I further understand and agree that, if I am hired, my employment with any company on FindX will be “at will.”
+					</label>
+					<label>
+						<input type="checkbox" name="cert_6">I understand that all offers are conditioned on the provision of satisfactory proof of my identity and legal authority to work in the United States.
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<input id="submit_button" class="btn btn-default center-block" type="submit">
+		</div>
+	</form>
+</div>

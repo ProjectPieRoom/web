@@ -1,0 +1,141 @@
+#content_container {
+	text-align: center;
+}
+
+.form-group {
+	display: inline-block;
+	text-align: left;
+	margin-bottom: 30px;
+	min-width: 600px;
+}
+
+.heading {
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 500;
+	font-size: 26px;
+	color: #8D2C51;
+	letter-spacing: 1px;
+}
+
+.form-control {
+	display: inline-block;
+	width: 200px;
+	margin-bottom: 5px;
+}
+
+#address {
+	width: 355px;
+}
+
+#address2 {
+	width: 250px;
+}
+
+#city, #state{
+	width: 150px;
+}
+
+#country {
+	width: 197px;
+}
+
+#zipcode {
+	width: 100px;
+}
+
+#work_q1_explaination {
+	width: 100%;
+	resize: none;
+}
+
+hr {
+	margin: 10px 0px;
+}
+
+#ed_div .form-control{
+	border-radius: 0px;
+	margin: 0px;
+}
+
+#ed_div span {
+	text-align: center;
+	font-weight: 500;
+}
+
+#ed_div #radio_graduate {
+	font-size: 12px;
+}
+
+#ed_div .location {
+	width: 150px;
+}
+
+#ed_div .degree {
+	width: 70px;
+}
+
+#ed_div .graduate {
+	width: 300px;
+	vertical-align: top;
+}
+
+#ed_div input {
+	margin-top: 0px;
+}
+
+#professional_references .form-control {
+	width: 250px;
+}
+
+#professional_references h6,
+#professional_references span {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+#professional_references .radio-inline {
+	font-size: small;
+}
+
+#professional_references .radio-inline input {
+	margin-top: 2px;
+}
+
+#professional_references .ref_phone {
+	width: 188px;
+}
+
+#employment .em_location, 
+#employment .em_title {
+	width: 246px;
+}
+
+#employment .em_date,
+#employment h6 {
+	display: inline-block;
+}
+
+#employment h6 {
+	margin-left: 10px;
+}
+
+#employment .em_leaving {
+	width: 404px;
+}
+
+#certification {
+	max-width: 800px;
+}
+
+#submit_button {
+	text-align: center;
+}
+
+#content_container {
+	/*background-color: #EAEAEA;*/
+	background-color: white;
+	font-family: 'helvetica neue', arial, helvetica, freesans, 'liberation sans', 'numbus sans l', sans-serif;
+	padding: 0% 4%;
+}
+

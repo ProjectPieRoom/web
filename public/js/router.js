@@ -13,12 +13,15 @@ define([
   'views/loggedout/loggedout_view',
   'views/home/home_view',
   'views/user/profile_view',
+  'views/user/common_application_view',
+  'views/user/common_application_edit_view',
 ], function($, _, Backbone, Parse, AppState,
   NavBarView,
   CompanyIndexView, SingleCompanyView,
   NewUserView, LoginView,
   AdminView,
-  LoggedOutView, HomeView, ProfileView
+  LoggedOutView, HomeView, ProfileView,
+  CommonApplicationView, CommonApplicationEditView
   ) {
   'use strict';
 
@@ -36,6 +39,8 @@ define([
       'join/': 'new_user',
       'login': 'login',
       'profile': 'profile',
+      'common_app/view': 'view_resume',
+      'common_app/edit': 'edit_resume',
 
       //Misc
       'admin': 'admin',
@@ -96,6 +101,17 @@ define([
     profile: function() {
       var profileView = new ProfileView({});
       profileView.render();
+    },
+
+    view_resume: function() {
+      var commonAppView = new CommonApplicationView({});
+      commonAppView.render();
+    },
+
+    // TO DO: Add in editing for resume
+    edit_resume: function() {
+      var commonAppEditView = new CommonApplicationEditView({});
+      commonAppEditView.render();
     },
 
     //merge into index
