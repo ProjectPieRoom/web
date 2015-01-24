@@ -6602,7 +6602,7 @@
         this.models.sort(boundComparator);
       }
       if (!options.silent) {
-        this.trigger('reset', this, options);
+        this.trigger('sort', this, options);
       }
       return this;
     },

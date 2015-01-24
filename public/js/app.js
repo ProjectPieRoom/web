@@ -7,13 +7,14 @@ define([
   'parse',
   'collections/company/companies_collection',
 ], function($, _, Backbone, AppRouter, Parse, CompaniesCollection){
-  var initialize = function(){
+  var initialize = function() {
     var companies = new CompaniesCollection();
     companies.fetch({
       success: function(collection) {
         new AppRouter({
           companies: collection
         });
+        var dispatcher = _.clone(Backbone.Events);
         Parse.history.start();
       },
       error: function(collection, error) {

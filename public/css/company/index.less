@@ -1,10 +1,63 @@
 #company_index_container {
-	#sidebar {
-		width: 30%;
-		max-width: 400px;
-	}
+	background-color: #CCC;
+	#company_search_container {
+		display: table-row;
 
-	#content {
-		width: 70%;
+		.padding_30 {
+			width: 5%;
+			display: table-cell;
+			max-width: 50px;
+		}
+		#search_sidebar {
+			width: 20%;
+			max-width: 400px;
+			display: table-cell;
+
+			#sort_div {
+				width: 100%;
+				background-color: #FFF;
+				cursor: pointer;
+
+				.sort_section {
+					border-top: 1px solid rgba(255,255,255,.6);
+					padding: 11px 14px;
+					background-color: rgb(248, 249, 250);
+				}
+
+				.active {
+					font-weight: 700;
+					background-color: #FFF;
+				}
+			}
+
+			#filter_div {
+				width: 100%;
+				background-color: #FFF;
+				margin-top: 20px;
+				cursor: pointer;
+
+
+				.filter_section {
+					border-top: 1px solid rgba(255,255,255,.6);
+					padding: 11px 14px;
+					background-color: rgb(248, 249, 250);
+
+					.chevron {
+						float: right;
+					}
+				}
+
+				.active {
+					background-color: #FFF;
+				}
+			}
+		}
+
+		#content_box {
+			width: 75%;
+			margin-left: 5%;
+			background-color: rgb(248, 249, 250);
+			display: table-cell;
+		}
 	}
 }

@@ -23,6 +23,7 @@ define([
       };
       this.template = this.template( data );
       this.$el.html( this.template );
+      this.$el.attr( "id", "company_tile_" + this.model.id );
       this.parentElem.append(this.$el);
       this.bindActions();
       return this;

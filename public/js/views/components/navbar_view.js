@@ -36,6 +36,6 @@ define([
 			this.$el.html( "" );
 		}
 	});
-	// Our module now returns our view
+	
 	return NavBarView;
 });

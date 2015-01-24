@@ -43,12 +43,58 @@
   margin-bottom: 3px;
   margin-top: 5px;
 }
-#company_index_container #sidebar {
-  width: 30%;
-  max-width: 400px;
+#company_index_container {
+  background-color: #CCC;
 }
-#company_index_container #content {
-  width: 70%;
+#company_index_container #company_search_container {
+  display: table-row;
+}
+#company_index_container #company_search_container .padding_30 {
+  width: 5%;
+  display: table-cell;
+  max-width: 50px;
+}
+#company_index_container #company_search_container #search_sidebar {
+  width: 20%;
+  max-width: 400px;
+  display: table-cell;
+}
+#company_index_container #company_search_container #search_sidebar #sort_div {
+  width: 100%;
+  background-color: #FFF;
+  cursor: pointer;
+}
+#company_index_container #company_search_container #search_sidebar #sort_div .sort_section {
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 11px 14px;
+  background-color: #f8f9fa;
+}
+#company_index_container #company_search_container #search_sidebar #sort_div .active {
+  font-weight: 700;
+  background-color: #FFF;
+}
+#company_index_container #company_search_container #search_sidebar #filter_div {
+  width: 100%;
+  background-color: #FFF;
+  margin-top: 20px;
+  cursor: pointer;
+}
+#company_index_container #company_search_container #search_sidebar #filter_div .filter_section {
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 11px 14px;
+  background-color: #f8f9fa;
+}
+#company_index_container #company_search_container #search_sidebar #filter_div .filter_section .chevron {
+  float: right;
+}
+#company_index_container #company_search_container #search_sidebar #filter_div .active {
+  background-color: #FFF;
+}
+#company_index_container #company_search_container #content_box {
+  width: 75%;
+  margin-left: 5%;
+  background-color: #f8f9fa;
+  display: table-cell;
 }
 #single_company_container {
   /*background-color: #EAEAEA;*/
@@ -269,22 +315,4 @@
 #new_user #new_user_form_container #facebook_login_div #facebook_signup_button {
   max-height: 40px;
   cursor: pointer;
-}
-.parallax-pane {
-  color: #FFFFFF;
-  width: 100%;
-}
-#parallax-pane-1 {
-  /*background: #8D2C51 url(http://www.smitwallpaper.com/wallpaper/original/digital-wallpaper-3_1.jpg) no-repeat top center;*/
-  background: #8D2C51;
-  height: 300;
-}
-#parallax-pane-2 {
-  background: #ffffff url(/img/SanFran.jpg) no-repeat top center;
-  background-size: 100% 100%;
-  height: 400px;
-}
-#parallax-pane-3 {
-  background: #FE8C1C;
-  height: 400px;
 }

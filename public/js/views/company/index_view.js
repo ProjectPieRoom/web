@@ -3,19 +3,43 @@ define([
   'underscore',
   'backbone',
   'parse',
+  '../../collections/company/companies_collection',
+  '../app/search_dispatcher',
   'text!templates/company/index_template.html',
-  'views/company/company_view'
-], function($, _, Backbone, Parse, IndexTemplate, CompanyView){
+  'views/company/company_view',
+  'views/company/search_sidebar'
+], function($, _, Backbone, Parse, CompaniesCollection, SearchEventDispatcher, IndexTemplate, CompanyView, SearchSidebar){
   var CompanyIndexView = Parse.View.extend({
     el: $('#app-view'),
-    template: _.template( IndexTemplate ),
 
     initialize: function(options) {
       this.collection = options.companies;
-      this.collection.bind('add', this.addOne);
+      this.initializeCollection();
+      this.dupCollection();
+      SearchEventDispatcher.on("location_filter_click", this.filterCompanies, this);
+    },
+
+    initializeCollection: function() {
+      if(this.originalCollection) {
+        this.collection = this.originalCollection
+      }
+      this.collection.bind('sort', this.render, this);
+    },
+
+    dupCollection: function() {
+      var that = this;
+      var allModels = this.collection.filter(function(model) {
+        return true;
+      });
+      this.originalCollection = new CompaniesCollection(allModels);
+    },
+
+    clearAll: function() {
+      $("#content_box").html("");
     },
 
     addAll: function() {
+      this.clearAll();
       this.collection.forEach( this.addOne, this );
     },
 
@@ -26,8 +50,44 @@ define([
       this.$('#content_box').append( view.render().$el );
     },
 
-    render: function(){
-      this.$el.html( this.template );
+    addSome: function(companies) {
+      this.clearAll();
+      _.each(companies, function(company) {
+        this.addOne(company)
+      }, this)
+    },
+
+    filterCompanies: function() {
+      //Aggregate all filters
+      this.initializeCollection();
+      this.filterByLocation();
+      //More filters
+      this.addAll();
+    },
+
+    filterByLocation: function() {
+      var that = this;
+      var locationCheckboxes = $(".location_checkbox");
+      var checkedLocationCheckboxes = []
+      locationCheckboxes.each(function() {
+        var checkbox = $(this)
+        if(checkbox.is(":checked")) {
+          checkedLocationCheckboxes.push(checkbox);
+          // var locationToExclude = checkbox.data("text");
+          // that.collection = that.collection.excludeLocation(locationToExclude);
+        }
+      });
+      if(checkedLocationCheckboxes.length == 0) return; //Keep all
+      var includeLocations = _.map(checkedLocationCheckboxes, function(checkbox) {
+        return checkbox.data("text");
+      });
+      this.collection = this.collection.includeLocations(includeLocations);
+    },
+
+    render: function() {
+      var template = _.template( IndexTemplate );
+      this.$el.html( template );
+      new SearchSidebar({collection: this.collection}).render();
       this.addAll();
       return this;
     }
