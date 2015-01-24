@@ -68,6 +68,7 @@ define([
             new CheckboxView({
               checkClassName: "location_checkbox",
               label: locations[i],
+              text: locations[i],
               parentElem: "#location_filter_container .well",
               message: "location_filter_click"
             }).render();
@@ -77,9 +78,34 @@ define([
       });
     },
 
+    appendEmployeeCountFilters: function() {
+      new CheckboxView({
+        checkClassName: "employee_count_checkbox",
+        label: "1-10 employees",
+        text: "1",
+        parentElem: "#employees_filter_container .well",
+        message: "employees_filter_click"
+      }).render();
+      new CheckboxView({
+        checkClassName: "employee_count_checkbox",
+        label: "11-50 employees",
+        text: "11",
+        parentElem: "#employees_filter_container .well",
+        message: "employees_filter_click"
+      }).render();
+      new CheckboxView({
+        checkClassName: "employee_count_checkbox",
+        label: ">50 employees",
+        text: "50",
+        parentElem: "#employees_filter_container .well",
+        message: "employees_filter_click"
+      }).render();
+    },
+
     render: function() {
       this.$el.html( this.template );
       this.appendLocationFilters();
+      this.appendEmployeeCountFilters();
       return this;
     }
   });

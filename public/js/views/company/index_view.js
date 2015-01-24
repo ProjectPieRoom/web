@@ -17,6 +17,7 @@ define([
       this.initializeCollection();
       this.dupCollection();
       SearchEventDispatcher.on("location_filter_click", this.filterCompanies, this);
+      SearchEventDispatcher.on("employees_filter_click", this.filterCompanies, this);
     },
 
     initializeCollection: function() {
@@ -61,20 +62,18 @@ define([
       //Aggregate all filters
       this.initializeCollection();
       this.filterByLocation();
+      this.filterByEmployeeCount();
       //More filters
       this.addAll();
     },
 
     filterByLocation: function() {
-      var that = this;
       var locationCheckboxes = $(".location_checkbox");
-      var checkedLocationCheckboxes = []
+      var checkedLocationCheckboxes = [];
       locationCheckboxes.each(function() {
-        var checkbox = $(this)
+        var checkbox = $(this);
         if(checkbox.is(":checked")) {
           checkedLocationCheckboxes.push(checkbox);
-          // var locationToExclude = checkbox.data("text");
-          // that.collection = that.collection.excludeLocation(locationToExclude);
         }
       });
       if(checkedLocationCheckboxes.length == 0) return; //Keep all
@@ -82,6 +81,22 @@ define([
         return checkbox.data("text");
       });
       this.collection = this.collection.includeLocations(includeLocations);
+    },
+
+    filterByEmployeeCount: function() {
+      var employeeCountCheckboxes = $(".employee_count_checkbox");
+      var checkedEmployeeCountCheckboxes = [];
+      employeeCountCheckboxes.each(function() {
+        var checkbox = $(this);
+        if(checkbox.is(":checked")) {
+          checkedEmployeeCountCheckboxes.push(checkbox);
+        }
+      });
+      if(checkedEmployeeCountCheckboxes.length == 0) return; //Keep all
+      var includeEmployeeCounts = _.map(checkedEmployeeCountCheckboxes, function(checkbox) {
+        return checkbox.data("text");
+      });
+      this.collection = this.collection.includeEmployeeCount(includeEmployeeCounts);
     },
 
     render: function() {

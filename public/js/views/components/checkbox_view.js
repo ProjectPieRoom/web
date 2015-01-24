@@ -19,6 +19,7 @@ define([
     initialize: function(options) {
       this.checkClassName = options.checkClassName;
       this.label = options.label;
+      this.text = options.text;
       this.parentElem = $(options.parentElem);
       this.message = options.message;
       return this;
@@ -31,7 +32,8 @@ define([
     render: function(){
       var data = {
         checkClassName: this.checkClassName,
-        label: this.label
+        label: this.label,
+        text: this.text,
       }
       this.template = this.template(data);
       this.$el.html( this.template );

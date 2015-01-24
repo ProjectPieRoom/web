@@ -13,12 +13,26 @@ define([
 	  },
 	  includeLocations: function(locationsToInclude) {
 	  	filtered = this.filter(function(company) {
-	  		locations = company.get("Locations")
+	  		locations = company.get("Locations");
 	  		var include = false;
 	  		_.each(locations, function(location) {
 	  			_.each(locationsToInclude, function(locationToInclude) {
-	  				if(location == locationToInclude) include =  true;
+	  				if(location == locationToInclude) return include =  true;
 	  			});
+	  		})
+	  		return include;
+	  	});
+	  	return new CompaniesCollection(filtered);
+	  },
+	  includeEmployeeCount: function(countsToInclude) {
+	  	countsToInclude = _.map(countsToInclude, function(countAsStr) {
+	  		return parseInt(countAsStr);
+	  	});
+	  	filtered = this.filter(function(company) {
+	  		employeeCount = company.get("NumEmployees");
+	  		var include = false;
+	  		_.each(countsToInclude, function(count) {
+  				if(count == employeeCount) return include = true;
 	  		})
 	  		return include;
 	  	});
